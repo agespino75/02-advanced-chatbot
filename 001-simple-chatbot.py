@@ -11,19 +11,19 @@ openai_api_key = os.environ["OPENAI_API_KEY"]
 
 from langchain_openai import ChatOpenAI
 
-chatbot = ChatOpenAI(model="gpt-3.5-turbo")
+chatbot = ChatOpenAI(model="gpt-4o-mini")
 
 from langchain_core.messages import HumanMessage
 
 messagesToTheChatbot = [
-    HumanMessage(content="My favorite color is blue."),
+    HumanMessage(content="My favorite color is black."),
 ]
 
 response = chatbot.invoke(messagesToTheChatbot)
 
 print("\n----------\n")
 
-print("My favorite color is blue.")
+print("My favorite color is black.")
 
 print("\n----------\n")
 print(response.content)
@@ -81,11 +81,11 @@ print(response)
 
 print("\n----------\n")
 
-response = chain.invoke("my name is Julio")
+response = chain.invoke("my name is Beto")
 
 print("\n----------\n")
 
-print("my name is Julio")
+print("my name is Beto")
 
 print("\n----------\n")
 print(response)
