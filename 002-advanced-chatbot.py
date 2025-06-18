@@ -11,19 +11,19 @@ openai_api_key = os.environ["OPENAI_API_KEY"]
 
 from langchain_openai import ChatOpenAI
 
-chatbot = ChatOpenAI(model="gpt-3.5-turbo")
+chatbot = ChatOpenAI(model="gpt-4o-mini")
 
 from langchain_core.messages import HumanMessage
 
 messagesToTheChatbot = [
-    HumanMessage(content="My favorite color is blue."),
+    HumanMessage(content="My favorite color is black."),
 ]
 
 response = chatbot.invoke(messagesToTheChatbot)
 
 print("\n----------\n")
 
-print("My favorite color is blue.")
+print("My favorite color is black.")
 
 print("\n----------\n")
 print(response.content)
@@ -132,7 +132,7 @@ responseFromChatbot = chatbot_with_message_history.invoke(
 
 print("\n----------\n")
 
-print("Mi name is Julio. (in session2)")
+print("Mi name is Beto. (in session2)")
 
 print("\n----------\n")
 print(responseFromChatbot.content)
@@ -211,13 +211,13 @@ print(responseFromChatbot.content)
 print("\n----------\n")
 
 responseFromChatbot = chatbot_with_message_history.invoke(
-    [HumanMessage(content="My favorite city is San Francisco.")],
+    [HumanMessage(content="My favorite city is Vancouver.")],
     config=session1,
 )
 
 print("\n----------\n")
 
-print("My favorite city is San Francisco. (in session1)")
+print("My favorite city is Vancouver. (in session1)")
 
 print("\n----------\n")
 print(responseFromChatbot.content)
